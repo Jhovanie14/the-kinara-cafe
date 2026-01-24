@@ -10,7 +10,10 @@ function Hero() {
     setIsVisible(true);
   }, []);
   return (
-    <section id="hero" className="min-h-screen flex items-center overflow-hidden">
+    <section
+      id="hero"
+      className="min-h-screen flex items-center overflow-hidden"
+    >
       {/* Hero content */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-32">
         <div className="max-w-3xl">
@@ -34,11 +37,20 @@ function Hero() {
           </h1>
 
           {/* Description */}
+          <p
+            className={`text-lg sm:text-xl text-stone-300 leading-relaxed mb-8 max-w-xl transition-all duration-1000 delay-400 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
+            Experience the perfect blend of artisan coffee, freshly baked
+            pastries, and warm hospitality at Kinara Cafe. Your neighborhood
+            escape for moments that matter.
+          </p>
+          {/* CTA button */}
           <div className="flex flex-wrap gap-4 mb-12">
-            <button
-             
-              className="group px-8 py-4 bg-yellow-600 hover:bg-yellow-500 text-white font-semibold rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-yellow-500/30 flex items-center gap-2"
-            >
+            <button className="group px-8 py-4 bg-yellow-600 hover:bg-yellow-500 text-white font-semibold rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-yellow-500/30 flex items-center gap-2">
               Explore Menu
               <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
             </button>
