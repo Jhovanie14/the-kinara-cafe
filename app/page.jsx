@@ -4,6 +4,7 @@ import Gallery from "@/components/cafe/Gallery";
 import Hero from "@/components/cafe/Hero";
 import Menu from "@/components/cafe/Menu";
 import Navbar from "@/components/cafe/Navbar";
+import NewsLetter from "@/components/cafe/NewsLetter";
 
 export default function Home() {
   return (
@@ -18,6 +19,8 @@ export default function Home() {
         <Gallery />
         {/* Contact Section */}
         <Contact />
+        {/* Newsletter Section */}
+        <NewsLetter />
         {/* Footer */}
         <Footer />
       </main>
