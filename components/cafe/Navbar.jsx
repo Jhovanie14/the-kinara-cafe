@@ -2,6 +2,7 @@
 
 import { Button } from "../ui/button";
 import { Coffee, Menu, X } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 function Navbar() {
@@ -31,7 +32,7 @@ function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Home", id: "hero" },
+    { name: "Home", id: "/" },
     { name: "Menu", id: "menu" },
     { name: "Gallery", id: "gallery" },
     { name: "About", id: "about" },
@@ -44,8 +45,8 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg py-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <button
-            onClick={() => scrollToSection("hero")}
+          <Link
+            href="/"
             className="flex items-center gap-2 group"
           >
             <div
@@ -60,14 +61,14 @@ function Navbar() {
             >
               Kinara <span className="text-yellow-400">Cafe</span>
             </span>
-          </button>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.id}
-                onClick={() => scrollToSection(link.id)}
+                href={`/${link.id}`}
                 className={`relative font-medium transition-colors duration-300 group ${
                   isScrolled
                     ? "text-yellow-400 hover:text-yellow-500"
@@ -76,7 +77,7 @@ function Navbar() {
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-500 group-hover:w-full transition-all duration-300" />
-              </button>
+              </Link>
             ))}
           </div>
 
